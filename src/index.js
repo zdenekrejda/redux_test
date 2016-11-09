@@ -21,13 +21,14 @@ function todo(state = initialState, action) {
 
             /* Third action - sort tasks */
         case 'SORT':
+            newState = [...state];
             if(action.sort_up) {
-                state.sort((a, b) => (a < b));
+                newState.sort((a, b) => (a < b));
             }
             else {
-                state.sort((a, b) => (a > b));
+                newState.sort((a, b) => (a > b));
             }
-            return state;
+            return newState;
 
             /* Fourth action - remove all tasks */
         case 'REMOVE-ALL':
