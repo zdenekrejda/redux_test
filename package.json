@@ -1,0 +1,21 @@
+{
+  "name": "redux_test",
+  "version": "1.0.0",
+  "description": "REDUX + REAXT test application",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zdenekrejda/redux_test.git"
+  },
+  "author": "Zdenek Rejda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zdenekrejda/redux_test/issues"
+  },
+  "homepage": "https://github.com/zdenekrejda/redux_test#readme"
+}
