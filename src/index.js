@@ -1,6 +1,8 @@
-import {
-    createStore
-} from 'redux';
+import { createStore } from 'redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app';
+
 
 /* Initial state of reducer - 2 initial tasks */
 var initialState = ['First task', 'Second task', 'Active task'];
@@ -46,7 +48,7 @@ var store = createStore(todo);
 store.subscribe(function() {
     var state = store.getState();
     console.log('New state:', state);
-    document.body.innerHTML = 'Actual state:<br/>- ' + state.join('<br/>- ');
+    /* document.body.innerHTML = 'Actual state:<br/>- ' + state.join('<br/>- '); */
 });
 
 /* few actions for test */
@@ -75,8 +77,13 @@ store.dispatch({
     sort_up: false
 });
 
-setTimeout(() => {
-    store.dispatch({
-        type: 'REMOVE-ALL'
-    });
-}, 10000);
+
+var removeItem = function(id) {
+  store.dispatch({ type: 'REMOVE', id: id });
+};
+
+var addItem = function(text) {
+  store.dispatch({ type: 'ADD', text: text });
+};
+
+ReactDOM.render(<App removeItem={removeItem} addItem={addItem} store={store}/>, document.getElementById("root"));
